@@ -22,14 +22,12 @@ public class MongoDB {
       private BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
       private MongoClient mongoClient;
       private MongoDatabase mongoDatabase;
-      private MongoCollection<Document> mongoCollection;
+      private MongoCollection<Document> mongoCollection=null;
       private MongoCredential credential;
     /**
      * to add New Student
      */
-    public void addStudent()
-      {
-             connectionDB();
+    public void addStudent() {
           String name=null ;
           Integer roll_no=1;
           Integer age =0;
@@ -49,7 +47,7 @@ public class MongoDB {
           student.setRoll_no(roll_no);
           student.setName(name);
           student.setAge(age);
-          System.out.println(student.getAge()+"hello world in add student ");
+          connectionDB();
           mongoDatabase = mongoClient.getDatabase("admin");
           mongoCollection = mongoDatabase.getCollection("student");
         //  System.out.println("sucess message   "+ mongoDatabase.getName()+"   "+mongoCollection.getNamespace());
@@ -60,7 +58,7 @@ public class MongoDB {
           System.out.println("data inserted ");
 
 
-      }//method end
+      }// addStudent method end
 
     /**
      * to create a connection
@@ -81,10 +79,11 @@ public class MongoDB {
      * to display the record from database
      */
     public void display(){
-        //connectionDB();
+        connectionDB();// open the connection
+
         FindIterable<Document> cursor=null;
        try {
-           cursor =mongoCollection.find();
+              cursor =mongoCollection.find();
         }catch (NullPointerException ex ){
            ex .printStackTrace();
        }
@@ -105,7 +104,9 @@ public class MongoDB {
      * show specific Detail
      */
 
-    public void displayBYId (String roll_no){
+    public void displayBYId (int roll){
+        connectionDB();
+        String roll_no=Integer.toString(roll);
         BasicDBObject searchQuery=new BasicDBObject();
         searchQuery.put("roll_no",roll_no);
 
