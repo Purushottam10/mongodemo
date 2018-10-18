@@ -1,7 +1,7 @@
-import javax.print.attribute.standard.NumberUp;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
+
 /**
  * main method class
  */
@@ -11,10 +11,7 @@ public class Main {
         int roll_no=1;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     MongoDB mgdb=new MongoDB();
-     //
 
-     // mgdb.addData();
-       mgdb.display();
        do{
            System.out.print("Enter your choice");
            System.out.println("\n1 for Insert \n2 for Display \n3 for Display By Id "
@@ -39,6 +36,32 @@ public class Main {
                    ex.printStackTrace();
                }
            mgdb.displayBYId(roll_no);
+           }//end of if
+           else if (choice==4) {
+               System.out.println("enter Student Roll No ");
+
+               try {
+                   roll_no = Integer.parseInt(bufferedReader.readLine());
+               } catch (NumberFormatException ex) {
+                   ex.printStackTrace();
+               }
+               mgdb.deleteById(roll_no);
+           }//end of if
+           else if (choice==5) {
+               System.out.println("enter Student Roll No ");
+
+               try {
+                   roll_no = Integer.parseInt(bufferedReader.readLine());
+               } catch (NumberFormatException ex) {
+                   ex.printStackTrace();
+               }
+               mgdb.updateById(roll_no);
+           }//end of if
+           else  if(choice==6){
+               System.exit(0);
+           }
+           else {
+               System.out.println("it's a wrong choice ");
            }
        }while(true);
 
