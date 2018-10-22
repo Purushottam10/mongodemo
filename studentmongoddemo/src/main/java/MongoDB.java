@@ -136,7 +136,7 @@ public class MongoDB {
     /**
      * Update record by id
      */
-    public void updateById(int roll_no){
+    public void updateById(int roll_no) throws  IOException{
         BasicDBObject query = new BasicDBObject();
         query.put("roll_no", roll_no);
 
@@ -144,14 +144,14 @@ public class MongoDB {
         Integer age =0;
         student = new Student();
         System.out.println("enter the Student Name");
+        name=bufferedReader.readLine();
 
-        try{ name=bufferedReader.readLine();
 
+        try{
             System.out.println("enter the age of student ");
-
             age=Integer.parseInt( bufferedReader.readLine());
 
-        }catch (IOException ex){
+        }catch (NumberFormatException ex){
             ex.printStackTrace();
         }
         student.setRoll_no(roll_no);
@@ -159,9 +159,10 @@ public class MongoDB {
         student.setAge(age);
            mongoCollection=mongoDatabase.getCollection("student");
 
-           mongoCollection.updateOne(Filters.eq("roll_no",student.getRoll_no()), Updates.set("name",student.getName()));
+           mongoCollection.updateOne(Filters.eq("roll_no",student.getRoll_no()), Updates.set("name ",student.getName()));
            mongoCollection.updateOne(Filters.eq("roll_no",student.getRoll_no()),Updates.set("age",student.getAge()));
 
     }//update method end
+
 
 }//class end
