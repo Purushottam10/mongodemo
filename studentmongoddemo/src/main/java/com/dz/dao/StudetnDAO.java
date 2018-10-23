@@ -1,6 +1,5 @@
 package com.dz.dao;
-import java.util.ArrayList;
-import java.util.List;
+
 import com.dz.config.DBConnection;
 import com.dz.model.Student;
 import com.mongodb.BasicDBObject;
@@ -21,7 +20,7 @@ public class StudetnDAO {
      * @return true if data added in the Data base
      */
     public void addStudent(Student student){
-        DBConnection connection=new DBConnection();
+         connection=new DBConnection();
 
 
 
@@ -59,18 +58,17 @@ public class StudetnDAO {
      *
      * @param roll_no
      */
-    public FindIterable DisplayById (int roll_no){
+    public FindIterable<Document> DisplayById (int roll_no){
 
-
+         connection=new DBConnection();
         BasicDBObject searchQuery=new BasicDBObject();
 
         searchQuery.put("roll_no",roll_no);
-        System.out.println("Hello in Dao");
+
         MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
         MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("student");
         FindIterable<Document> cursor=mongoCollection.find(searchQuery);
-
-         return cursor;
+       return  cursor;
 
 
     }// displayById method end
@@ -78,6 +76,7 @@ public class StudetnDAO {
      * Delete  record  by roll No
      */
     public void deleteById(int roll_no){
+        connection =new DBConnection();
         BasicDBObject searchQuery = new BasicDBObject();
         searchQuery.put("roll_no", roll_no);
         MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
@@ -88,6 +87,7 @@ public class StudetnDAO {
     }//delete method end
 
     public void updateById(int roll_no,Student student){
+        connection =new DBConnection();
         BasicDBObject query = new BasicDBObject();
         query.put("roll_no", roll_no);
         MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");

@@ -11,11 +11,10 @@ import org.bson.Document;
  *Operational Class
  */
 public class MongoDB {
+
       private Student student;
       private BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
       private StudetnDAO studentDao;
-   ;
-
 
     /**
      * To Start the connection
@@ -77,22 +76,15 @@ public void display(){
 public void DisplayById(int roll_no){
 
     studentDao =new StudetnDAO();
-    FindIterable<Document> cursor=null ;
 
-
-    cursor= studentDao.DisplayById(roll_no);
-   if(cursor!=null) {
-       for (Document doc : cursor) {
-           System.out.print("hello world in mongo Db ");
-           System.out.println(doc.toJson());
-       }
-   }
-   else if(cursor==null){
-       System.out.println("no record  found");
-   }
+    FindIterable<Document> cursor = studentDao.DisplayById(roll_no);
+    for (Document doc : cursor) {
+        System.out.print("hello world in mongo Db ");
+        System.out.println(doc.toJson());
+    }
 
 }
-
+//method end
 
 
     public void deleteById(int roll_no){
@@ -124,9 +116,7 @@ public void DisplayById(int roll_no){
         student.setName(name);
         student.setAge(age);
         studentDao.updateById(roll_no,student);
-        //   mongoCollection=mongoDatabase.getCollection("student");
 
-         //
 
     }//update method end
 

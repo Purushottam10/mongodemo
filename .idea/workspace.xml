@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="605c8211-4a26-4b92-8917-baeee0b93beb" name="Default Changelist" comment="second commit">
-      <change afterPath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentmongoddemo/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentmongoddemo/src/main/java/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/config/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/studentmongoddemo/target/" />
@@ -62,7 +58,7 @@
         <counts>
           <entry key="dummy" value="23" />
           <entry key="gitignore" value="22" />
-          <entry key="java" value="7626" />
+          <entry key="java" value="7718" />
           <entry key="txt" value="30" />
           <entry key="xml" value="11" />
         </counts>
@@ -70,7 +66,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Git file" value="22" />
-          <entry key="JAVA" value="7626" />
+          <entry key="JAVA" value="7718" />
           <entry key="PLAIN_TEXT" value="53" />
           <entry key="XML" value="11" />
         </counts>
@@ -96,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+            <state relative-caret-position="126">
+              <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+            <state relative-caret-position="-15">
+              <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,8 +146,8 @@
         <option value="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/DBOperation.java" />
         <option value="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/config/DBConnection.java" />
         <option value="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/application.java" />
-        <option value="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java" />
         <option value="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java" />
+        <option value="$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java" />
       </list>
     </option>
   </component>
@@ -166,7 +162,7 @@
     <option name="x" value="67" />
     <option name="y" value="27" />
     <option name="width" value="640" />
-    <option name="height" value="670" />
+    <option name="height" value="737" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -175,7 +171,7 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540277573825" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540278668891" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -284,15 +280,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32952693" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.7585644" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952693" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.01141925" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32952693" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.41598696" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32952693" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.41598696" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -390,20 +386,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java">
+    <entry file="file://$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="89" column="23" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
+        <state relative-caret-position="126">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/StudetnDAO.java">
+    <entry file="file://$PROJECT_DIR$/studentmongoddemo/src/main/java/com/dz/dao/MongoDB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
+        <state relative-caret-position="-15">
+          <caret line="80" column="34" selection-start-line="80" selection-start-column="34" selection-end-line="80" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
