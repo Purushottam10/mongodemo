@@ -1,16 +1,15 @@
 package com.dz.model;
 
 
-
 /**
  * Pojo class
  */
 public class Student {
-    private String name ;
-    private  int  roll_no;
-    private int age ;
+    private String name;
+    private int roll_no;
+    private int age;
 
-    public Student(){
+    public Student() {
 
     }
 /* public Student(int roll_no, String name, int age){
@@ -18,8 +17,8 @@ public class Student {
      setName(name);
      setAge(age);
  }*/
+
     /**
-     *
      * @return name
      */
     public String getName() {
@@ -28,7 +27,6 @@ public class Student {
     }
 
     /**
-     *
      * @param name
      * @return local value
      */
@@ -38,7 +36,6 @@ public class Student {
     }
 
     /**
-     *
      * @return roll_no
      */
     public int getRoll_no() {
@@ -46,17 +43,15 @@ public class Student {
     }
 
     /**
-     *
      * @param roll_no
      * @return local roll_no
      */
-    public void  setRoll_no(int roll_no) {
+    public void setRoll_no(int roll_no) {
         this.roll_no = roll_no;
 
     }
 
     /**
-     *
      * @return age
      */
     public int getAge() {
@@ -64,7 +59,6 @@ public class Student {
     }
 
     /**
-     *
      * @param age
      * @return lacal age
      */
@@ -72,12 +66,13 @@ public class Student {
         this.age = age;
 
     }
+
     /**
      * @Override toSting
      */
     @Override
-    public  String toString(){
-        return  name+" "+age;
+    public String toString() {
+        return name + " " + age;
     }
 
 }

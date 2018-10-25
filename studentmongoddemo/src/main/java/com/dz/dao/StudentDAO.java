@@ -10,10 +10,13 @@ import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import org.bson.Document;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Data Access Model to Performe
+ * Data Access Model and  Performe database operation
  */
-public class StudetnDAO {
+public class StudentDAO {
       private  DBConnection connection;
     /**
      * @param  student
@@ -22,56 +25,40 @@ public class StudetnDAO {
     public void addStudent(Student student){
          connection=new DBConnection();
 
-
-
-           MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
-           MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("student");
-           System.out.println(student.getRoll_no()+" "+student.getAge()+"  "+student.getName());
-                 Document document=new Document("roll_no",student.getRoll_no())
-                .append("name",student.getName())
-                .append("age",student.getAge());
-                 mongoCollection.insertOne(document);
-       System.out.println("data inserted ");
-
+        if(student.getAge()==0){
+            System.out.println("not valid Age ");
+        }
+   else {
+            MongoDatabase mongoDatabase = connection.getConnection().getDatabase("admin");
+            MongoCollection<Document> mongoCollection = mongoDatabase.getCollection("student");
+            Document document = new Document("roll_no", student.getRoll_no())
+                    .append("name", student.getName())
+                    .append("age", student.getAge());
+            mongoCollection.insertOne(document);
+            System.out.println("data inserted ");
+        }
     }//addStudent Method End
 
     /**
      * to Display the list of Student from Database
      */
-    public  FindIterable display(){
+    public  List display(){
         connection =new DBConnection();
         connection.getConnection();
 
         MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
         MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("student");
         FindIterable<Document> cursor=null;
-
-            cursor =mongoCollection.find();
-            return  cursor;
-
+          List<Document> studentList=(List<Document>) mongoCollection.find().into(new ArrayList<Document>());
+           // cursor =mongoCollection.find();
+            //return  cursor;
+      return studentList;
 
         //   to display from data base
 
     }//Display Method end
 
-    /**
-     *
-     * @param roll_no
-     */
-    public FindIterable<Document> DisplayById (int roll_no){
 
-         connection=new DBConnection();
-        BasicDBObject searchQuery=new BasicDBObject();
-
-        searchQuery.put("roll_no",roll_no);
-
-        MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
-        MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("student");
-        FindIterable<Document> cursor=mongoCollection.find(searchQuery);
-       return  cursor;
-
-
-    }// displayById method end
     /**
      * Delete  record  by roll No
      */
@@ -86,13 +73,13 @@ public class StudetnDAO {
 
     }//delete method end
 
-    public void updateById(int roll_no,Student student){
+    public void updateById(Student student){
         connection =new DBConnection();
         BasicDBObject query = new BasicDBObject();
-        query.put("roll_no", roll_no);
+        query.put("roll_no", student.getRoll_no());
         MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
         MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("student");
-        mongoCollection.updateOne(Filters.eq("roll_no",student.getRoll_no()), Updates.set("name ",student.getName()));
+        mongoCollection.updateOne(Filters.eq("roll_no",student.getRoll_no()), Updates.set("name",student.getName()));
         mongoCollection.updateOne(Filters.eq("roll_no",student.getRoll_no()),Updates.set("age",student.getAge()));
         System.out.println("database updated ");
     }//method end
