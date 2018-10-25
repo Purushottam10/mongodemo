@@ -1,7 +1,7 @@
 package com.dz;
 
-import com.dz.dao.StudentService;
-import com.dz.dao.StudentDAO;
+import com.dz.service.ImplStudentService;
+import com.dz.dao.ImplStudentDAO;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,8 +16,8 @@ public class Application {
             int choice = 0;
             int roll_no = 1;
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            StudentService mgdb = new StudentService();
-            StudentDAO studentDAO = new StudentDAO();
+            ImplStudentService mgdb = new ImplStudentService();
+            ImplStudentDAO studentDAO = new ImplStudentDAO();
 
 
             do {
@@ -29,7 +29,7 @@ public class Application {
                 } catch (NumberFormatException ex) {
                     ex.printStackTrace();
                 }
-                if (choice == 1) {
+                if (choice ==1) {
                     mgdb.addStudent();
                 }//end of First if
                 else if (choice == 2) {

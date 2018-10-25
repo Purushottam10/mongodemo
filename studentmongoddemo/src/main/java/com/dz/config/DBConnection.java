@@ -14,11 +14,10 @@ public class DBConnection {
      */
 
     public MongoClient getConnection() {
-        MongoClient mongoClient;
-        MongoCredential credential;
-        credential = MongoCredential.createCredential("system", "admin", "admin123".toCharArray());
 
-        mongoClient = new MongoClient(new ServerAddress("localhost", 27017), Arrays.asList(credential));
+        MongoCredential credential=MongoCredential.createCredential("system", "admin", "admin123".toCharArray());
+
+        MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017), Arrays.asList(credential));
 
 
         try {

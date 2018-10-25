@@ -1,7 +1,7 @@
-package com.dz.dao;
+package com.dz.service;
 
+import com.dz.dao.ImplStudentDAO;
 import com.dz.model.Student;
-import com.mongodb.client.FindIterable;
 import org.bson.Document;
 
 import java.io.BufferedReader;
@@ -13,11 +13,11 @@ import java.util.List;
 /**
  * Operational Class
  */
-public class StudentService {
+public class ImplStudentService implements  StudentService{
 
     private Student student;
     private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    private StudentDAO studentDao;
+    private ImplStudentDAO studentDao;
 
 
     public void addStudent() throws IOException{
@@ -25,7 +25,7 @@ public class StudentService {
         Integer roll_no = 1;
         Integer age = 0;
 
-        StudentDAO studentDao = new StudentDAO();
+        ImplStudentDAO studentDao = new ImplStudentDAO();
         Student student = new Student();
         List<Document> cursor = studentDao.display();
         for (Document doc : cursor){
@@ -60,8 +60,11 @@ public class StudentService {
 
     public void display() {
 
-        studentDao = new StudentDAO();
+        studentDao = new ImplStudentDAO();
         List<Document> cursor = studentDao.display();
+        if(cursor.isEmpty()){
+            System.err.println("no data in Document ");
+        }
         try {
             for (Document doc : cursor) {
 
@@ -79,7 +82,7 @@ public class StudentService {
      */
     public void DisplayById(int roll_no) {
 
-        studentDao = new StudentDAO();
+        studentDao = new ImplStudentDAO();
 
         List<Document> cursor = studentDao.display();
         for (Document doc : cursor) {
@@ -93,7 +96,7 @@ public class StudentService {
 
 
     public void deleteById(int roll_no) {
-        studentDao = new StudentDAO();
+        studentDao = new ImplStudentDAO();
         studentDao.deleteById(roll_no);
     }//method end
 
@@ -103,7 +106,7 @@ public class StudentService {
     public void updateById(int roll_no) throws IOException {
         /*
          */
-        studentDao = new StudentDAO();
+        studentDao = new ImplStudentDAO();
         String name = null;
         Integer age = 0;
         student = new Student();

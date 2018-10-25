@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Data Access Model and  Performe database operation
  */
-public class StudentDAO {
+public class ImplStudentDAO implements StudentDao{
       private  DBConnection connection;
     /**
      * @param  student
@@ -49,9 +49,8 @@ public class StudentDAO {
         MongoDatabase mongoDatabase=connection.getConnection().getDatabase("admin");
         MongoCollection<Document> mongoCollection=mongoDatabase.getCollection("student");
         FindIterable<Document> cursor=null;
-          List<Document> studentList=(List<Document>) mongoCollection.find().into(new ArrayList<Document>());
-           // cursor =mongoCollection.find();
-            //return  cursor;
+          List<Document> studentList= mongoCollection.find().into(new ArrayList<Document>());
+
       return studentList;
 
         //   to display from data base
